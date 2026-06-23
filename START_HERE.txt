@@ -1,0 +1,49 @@
+╔══════════════════════════════════════════════════════════════╗
+║          Brother QL-1100 macOS Fix — START HERE             ║
+╚══════════════════════════════════════════════════════════════╝
+
+STEP 1 — RUN THIS FIRST (one time only):
+──────────────────────────────────────────
+Right-click  INSTALL.command  → Open → click Open
+
+This removes the macOS security warning from all files
+and installs the Python dependencies automatically.
+You only need to do this once.
+
+STEP 2 — FIX YOUR PRINTER:
+──────────────────────────────────────────
+Double-click  RUN_FIX.command
+Enter your Mac password when asked.
+Watch the printer — it will print a test label when done.
+
+ALL THE FILES:
+──────────────────────────────────────────
+⭐ INSTALL.command        ← RUN THIS FIRST (clears security)
+⭐ RUN_FIX.command        ← Full fix + test print
+   TEST_PRINT.command     ← Send a test label
+   DIAG_ONLY.command      ← Diagnose without making changes
+   SHIPPING_LABEL.command ← Print a shipping label
+   CLEAN_PTOUCH.command   ← Fix P-touch Editor duplicates
+   WATCH_FOLDER.command   ← Auto-print PDFs from a folder
+
+WHAT IT FIXES:
+──────────────────────────────────────────
+✓ com.brother-paper-size-error
+✓ rastertobrotherQL1100 filter crash (signal 11)
+✓ Stuck print jobs / "Filter failed"
+✓ Duplicate entries in P-touch Editor
+
+KEY DISCOVERY:
+──────────────────────────────────────────
+The fix is  media=DC16  — Brother's internal PPD code for
+DK-1241 102mm x 152mm (4x6") labels. No other media code
+works. This is completely undocumented by Brother.
+
+COMPATIBLE LABELS:
+──────────────────────────────────────────
+✓ COLORWING DK-1241 compatible rolls
+✓ Genuine Brother DK-1241 rolls
+✓ Any 102mm x 152mm 4x6" compatible roll
+
+Tested: Mac Studio M4 · macOS 26 · Sequoia
+GitHub: github.com/YOUR_USERNAME/brother-ql1100-macos-fix
