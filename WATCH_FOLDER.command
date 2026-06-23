@@ -1,0 +1,16 @@
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+WATCH_DIR="$HOME/Desktop/PrintQueue"
+mkdir -p "$WATCH_DIR"
+clear
+echo ""
+echo "╔══════════════════════════════════════════════════════╗"
+echo "║        Brother QL-1100 — Watch Folder Mode          ║"
+echo "╚══════════════════════════════════════════════════════╝"
+echo ""
+echo "  Drop any PDF into this folder to auto-print:"
+echo "  $WATCH_DIR"
+echo ""
+echo "  Press Ctrl+C to stop watching."
+echo ""
+python3 "$SCRIPT_DIR/brother_ql1100_fix.py" --watch "$WATCH_DIR"

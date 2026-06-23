@@ -1,0 +1,20 @@
+#!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+clear
+echo ""
+echo "╔══════════════════════════════════════════════════════╗"
+echo "║     Brother QL-1100 — Auto Driver Update            ║"
+echo "║     Downloads v1.11.0d (July 2025) from Brother     ║"
+echo "║     Fixes: signal 11 crash on Apple Silicon         ║"
+echo "╚══════════════════════════════════════════════════════╝"
+echo ""
+echo "  This downloads the latest Universal (ARM64) driver"
+echo "  directly from Brother's servers (~33MB)."
+echo ""
+sudo python3 "$SCRIPT_DIR/brother_ql1100_fix.py" --update-driver
+echo ""
+echo "  After the driver updates, run RUN_FIX.command"
+echo "  to reconfigure CUPS with the correct DC16 media."
+echo ""
+read -n 1 -s -r -p "  Press any key to close..."
+echo ""
